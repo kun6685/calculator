@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin : 0;
+      padding : 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1f1f1f;
+    }
+
+    .test {
+      display : flex;
+      justify-content: center;
+      align-items: center;
+      height : 100vh;
+    }
+
+    .calculator {
+      background-color: white;
+      width : 300px;
+      padding : 10px;
+      border-radius: 10px;
+    }
+
+    .calculator form {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      grid-auto-rows : 65px;
+      grid-gap : 5px;
+    }
+
+    .calculator form input {
+      font-size : 20px;
+      transition: all 0.2s;
+      border : 1px solid black;
+      border-radius : 10px;
+    }
+
+    .calculator form input:hover {
+      background-color: rgb(194, 185, 185);
+    }
+
+
+    .calculator form input[type="text"] {
+      grid-column : span 4;
+      text-align: right;
+      padding : 15px;
+    }
+
+    .calculator form .result {
+      grid-column : span 2;
+    }
+
+    .calculator form .clear {
+      grid-column : span 4;
+    }
+
+  </style>
+</head>
+<body>
+<div class="test">
+  <div class="calculator">
+    <form name="forms">
+      <input type="text" name="output" readonly>
+      <input type="button" value="1" onclick="document.forms.output.value+='1'">
+      <input type="button" value="2" onclick="document.forms.output.value+='2'">
+      <input type="button" value="3" onclick="document.forms.output.value+='3'">
+      <input type="button" value="+" class="operator" onclick="document.forms.output.value+='+'">
+      <input type="button" value="4" onclick="document.forms.output.value+='4'">
+      <input type="button" value="5" onclick="document.forms.output.value+='5'">
+      <input type="button" value="6" onclick="document.forms.output.value+='6'">
+      <input type="button" value="-" class="operator" onclick="document.forms.output.value+='-'">
+      <input type="button" value="7" onclick="document.forms.output.value+='7'">
+      <input type="button" value="8" onclick="document.forms.output.value+='8'">
+      <input type="button" value="9" onclick="document.forms.output.value+='9'">
+      <input type="button" value="." class="dot" onclick="document.forms.output.value+='.'">
+      <input type="button" value="*" class="operator" onclick="document.forms.output.value+='*'">
+      <input type="button" value="/" class="operator" onclick="document.forms.output.value+='/'">
+      <input type="button" value="=" class="operator result" onclick="document.forms.output.value=eval(document.forms.output.value)">
+      <input type="button" value="C" class="operator clear" onclick="document.forms.output.value = ''">
+    </form>
+  </div>
+</div>
+</body>
+</html>
+
